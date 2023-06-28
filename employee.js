@@ -1,0 +1,18 @@
+class Employee {
+    constructor(name, salary, title, manager) {
+        this.name = name;
+        this.salary = salary;
+        this.title = title;
+        this.manager = manager || null;
+
+        if (manager instanceof Employee) {
+            manager.addEmployee(this);
+        }
+    }
+
+    calculateBonus(multiplier) {
+        return this.salary * multiplier;
+    }
+}
+
+module.exports = Employee;
